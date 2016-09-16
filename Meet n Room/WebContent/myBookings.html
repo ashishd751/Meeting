@@ -1,0 +1,40 @@
+<div class="container" ng-init="showBooking()">
+	<div class="check-out">
+   	    <table >
+		  <tr style="border-bottom: 1px solid #e78200;"><br>
+			<th>Item</th>
+			<th>Details</th>		
+			<th>Action</th>
+		  </tr>
+		  <tr ng-repeat="book in BookingList" style="border-bottom: 1px solid #e78200;">
+			<td class="ring-in"><br><a href="single.html" class="at-in"><img style="padding-bottom: 20px;" src="images/room2.jpg" class="img-responsive" alt=""></a>
+			<div class="sed">
+<!-- 				<p>{{book.id}}</p> -->
+				<br>
+				<h2>Room Name - {{book.roomname}}</h2>
+				<p>Status - {{book.status}}</p>
+				<p>From  Date - {{book.sd}}</p>
+				<p>To Date - {{book.ed}}</p>
+				
+			
+			</div>
+			<div class="clearfix"> </div></td>
+
+			<td>
+				<br>
+				<p>Category - {{book.category}}</p>
+				<p>Subject - {{book.subject}}</p>
+		
+
+			</td>
+			
+			
+			
+			<td class="check" style="cursor: pointer"><br> <a style="text-decoration: none;" class=" to-buy" ng-click="cancelBookingByUser(book.id)">Cancel Booking</a></td>
+		  </tr>
+
+	</table>
+	
+	<div class="clearfix"> </div>
+    </div>
+</div>

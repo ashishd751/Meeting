@@ -1,0 +1,121 @@
+<div class="container" ng-init="getRoomList()">
+	<div class="check-out">
+			<h1>Room List</h1>
+   	      <table >
+		  <tr style="border-bottom: 1px solid #e78200;"><br>
+			<th>Item</th>
+			<th>Features</th>		
+			<th>Action</th>
+		  </tr>
+		  <tr ng-repeat="room in RoomList" style="border-bottom: 1px solid #e78200;width : 900px;">
+			<td class="ring-in"><a class="at-in">
+				
+			<br>	<img src="images/room2.jpg" class="img-responsive" alt="" style="width : 110px; padding-bottom: 35px; ">
+			
+			</a>
+			<div class="sed"><br>
+				<h5>Room Name - {{room.roomName}}</h5>
+				<p>City - {{room.roomCity}}</p>
+				<p>Location -  {{room.roomLocation}}</p>
+				<p>Address - {{room.roomAddress}} </p>
+				
+			
+			</div>
+			<div class="clearfix"> </div></td>
+
+			<td>
+			<p>Capacity :{{room.roomCapacity}}</p>
+			<p>Tables:{{room.roomTables}}</p>
+	
+			<button type="button" style="background: #e78200;border-color: #e78200" class="btn btn-danger" ng-click="fullRoomDetail(room)">View More</button>
+			</td>
+			
+			
+			
+			<td class="check" style="cursor : pointer;"> <a style="text-decoration: none;"  class=" to-buy" ng-click="bkroom(room.id)">Book Now</a> <br>
+			<a style="text-decoration: none;"  class="to-buy" ng-click="update(room.id , room.roomName , room.roomCity , room.roomLocation , room.roomBlock , room.roomAddress , room.roomCapacity , room.roomTables , room.roomMachines , room.roomBoard , room.roomChart , room.roomScreen , room.roomProjector , room.roomInternet)">Update Room</a><br>
+			<!-- <a class="to-buy" ng-click="deleteRoom(room.id)">Delete Room</a> -->		
+			
+			<a style="text-decoration: none;"  data-toggle="modal" data-target="#myModal123" class=" to-buy" ng-click="getRoomId(room.id,room.roomName)">Delete Room</a>
+			</td>
+			
+		  </tr>
+	</table>
+	
+	<div class="clearfix"> </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div id="ordine" class="modal fade" role="dialog" ng-controller="ProductController">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">X</button>
+        <h4 class="modal-title" style="color: #e78200;">About Room {{detailRoom.roomName}} - </h4>
+      </div>
+      <div class="modal-body">
+      
+      <div class="col-sm-12 col-md-6">
+           <img src="images/table6.jpg"/>                       
+       </div>
+       <div class="col-sm-12 col-md-6" style="font-family: 'Nunito', sans-serif;">
+            <h3 style="font-size: 1.5em; color: #e78200;">{{detailRoom.roomName}}<span></span></h3><br>					
+		 </div>
+            
+			<p>City - {{detailRoom.roomCity}}</p>
+			<p>Location - {{detailRoom.roomLocation}}</p>
+			<p>Address - {{detailRoom.roomAddress}} </p>
+			<br><br><br><br>
+			<h3 style="font-size: 1.5em; color: #e78200;">Features :<span></span></h3><br>
+			<p>Capacity - {{detailRoom.roomCapacity}}</p>
+			<p>Tables - {{detailRoom.roomTables}}</p>
+			<p>Machines - {{detailRoom.roomMachines}}</p>
+			<p>Boards - {{detailRoom.roomBoard}}</p>
+			<p>Charts - {{detailRoom.roomChart}}</p>
+			<p>Screens - {{detailRoom.roomScreen}}</p>
+			<p>Projector - {{detailRoom.roomProjector}}</p>
+			<p>Internet Availability - {{detailRoom.roomInternet}}</p>
+      
+      </div>
+      
+      
+      
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal123" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">DELETE ROOM {{rName}}</h4>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete room?</p>
+         </div>
+        <div class="modal-footer">
+          <a class=" btn btn-danger" style="text-decoration: none;"  ng-click="deleteRoom(roomId)" data-dismiss="modal">Delete Room</a>
+          
+          <button type="button" class="to-buy" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ </div>
+</div>

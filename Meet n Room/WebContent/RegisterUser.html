@@ -1,0 +1,63 @@
+
+
+
+
+<div class="container" ng-controller="ProductController" ng-init="initialize_errMsg()">
+	<div class="register">
+		<h1>Create User</h1>
+		  	  <form name="myForm" novalidate> 
+				 <div class="col-md-6  register-top-grid">
+					
+					<div class="mation">
+						
+						<span>Name</span>
+						<input type="text"  id="name" name="name1" placeholder="Name" ng-model="name1" ng-change="myChange()" required />
+						<span style="color:red;" ng-show="myForm.name1.$touched && myForm.name1.$invalid">Name is required!</span><br>
+					 <span>Email</span>
+						<input type="email" name="email" id="email " placeholder="Email" ng-model="email" required > 
+						<span style="color:red;" ng-show="myForm.email.$touched && myForm.email.$invalid">Enter valid E-mail ID!</span><br> 
+						<!--  <div class="form-group">
+                            <input type="email" ng-model="email" class="form-control" placeholder="E-mail ID" name="email" required>
+                                    <p id="eval" class="text-danger" ng-show="myForm.email.$touched && regForm.email.$invalid">Enter valid E-mail ID!</p>
+                        </div>
+						 -->
+						
+					</div>
+					 <div class="clearfix"> </div>
+					 <!--   <a class="news-letter" href="#">
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Create</label>
+					   </a> -->
+					 </div>
+				     <div class=" col-md-6 register-bottom-grid">
+						   
+							<div class="mation">
+							
+								
+								<span>Password</span>
+								<input type="password" name="password" class="userinput" id="password1" placeholder="Password" ng-model="password"  required />
+								<span style="color:red;" ng-show="myForm.password.$touched && myForm.password.$invalid">Password is required!</span><br>
+				
+				
+								<span>Rights</span>
+								<input type="text"  class="userinput" id="password2" name="rights1" placeholder="Rights" ng-model="rights1" required />
+								<span style="color:red;" ng-show="myForm.rights1.$touched && myForm.rights1.$invalid"> Please Assign Rights!</span>
+							</div>
+					 </div>
+					 <div class="clearfix"> </div>
+				</form>
+				
+				<div class="register-but">
+				   <form>
+				       <div ng-bind-html="content"></div>
+					   <input type="submit" value="Create" id="submit" ng-click="createUser(id,name1,email,password,rights1)">	
+					   <div ng-show="my.message">
+					    <p style="color:red" >Please fill all the fields !</p>			   
+					  </div>
+					   <div ng-show="my1.message1">
+					    <p style="color:green" >Congrats! Registration Successful !</p>			   
+					  </div>
+					  
+				   </form>
+				</div>
+		   </div>
+</div>

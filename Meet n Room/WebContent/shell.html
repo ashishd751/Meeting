@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html ng-app="productApp">
+<head>
+	<meta charset="ISO-8859-1">
+	<script src="js/angular.min.js"> </script>	
+	<script src="js/angular-route.min.js"> </script>
+	<script src="js/angular-cookies.min.js"> </script>
+	<script src="js/logic.js"> </script>
+	<title>Meet 'n Room</title>
+	<link rel="stylesheet" href="css/Home.css">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+	<link rel="stylesheet" href="css/footer.css">
+	<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/complex_bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script> 
+	<script src="js/bootbox.min.js"> </script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+	  .carousel-inner > .item > img,
+	  .carousel-inner > .item > a > img {
+	      width: 100%;
+	      height: 475px;
+	      margin: auto;
+	  }
+	  .bio-modal{padding:15px;}
+	.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+		background-color: #e78200;
+	}
+	.nav > li > a{
+		padding: 10px 12px;
+	}
+	</style>
+	<style>
+		
+		th {
+		   color: #e78200;
+		   font-size: larger;  
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="header" ng-controller="ProductController">
+	<div class="header-top">
+		<div class="container">
+		<div class="col-sm-4 world">				
+				</div>
+				<div class="col-sm-4 logo">
+					<a href="#/"><img src="images/logo4.PNG" alt=""></a>	
+				</div>
+		
+			<div class="col-sm-4 header-left login-right" style="padding-left:240px ; padding-top: 33px;" ng-hide="initialize_var()[0]">		
+<!-- 					<p class="log" style="float:right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#/LoginPage">Login</a> -->
+					<!-- 	<span>or</span><a href="#/registerPage"  >Signup</a></p><br>   -->
+					<input type="submit" value="Login" id="submit" ng-click="login_redirect()">
+			</div>
+			
+			<div class="col-sm-4 header-left login-right " id="login" style="padding-left:20%; padding-top: 33px;" ng-show="initialize_var()[0]">		
+					<h5>Hello <span style="text-transform: capitalize; display: inline-block;font-size: 100%;font-family: 'Nunito', sans-serif;color: #000000;">{{initialize_var()[1]}} </span></h5>   	
+					<input type="submit" value="Logout" id="submit" ng-click="logout()"> 
+					
+			</div>
+				
+		</div>
+		</div>
+		<div class="container">
+			<div class="head-top">
+				
+		 <div class="col-sm-9 h_menu4" id="myNavbar">
+		 	<div style="float: right;padding-right: 75px;">
+				<ul class="memenu skyblue nav nav-pills" >
+					  <li class=" grid active"><a data-toggle="pill"  ng-href="#/" data-target="#">Home</a></li>
+					  <li class=" grid" ng-show="initialize_var()[0]" style="cursor: pointer;"><a data-toggle="pill" ng-click="redirect()">Room List</a></li>		
+					  <li ng-show="initialize_var()[2]"><a data-toggle="pill" ng-href="#/createRoom" data-target="#createRoom">Create Room</a></li>
+					  <li ng-show="initialize_var()[2]"><a data-toggle="pill" ng-href="#/registerPage" data-target="#registerPage">Create User</a></li>				      
+					  <li ng-show="initialize_var()[2]" style="cursor: pointer;"><a data-toggle="pill" ng-click="showAllUsers()">View Users</a></li>
+					  <li ng-show="initialize_var()[2]" style="cursor: pointer;"><a data-toggle="pill" ng-click="getBookingRequests()">View Requests</a></li>	
+					  <li ng-hide="initialize_var()[0]"><a data-toggle="pill" class="color6" href="#/rooms" data-target="#rooms" >Rooms</a></li>	
+					  <li ng-hide="initialize_var()[0]"><a data-toggle="pill" class="color6" ng-href="#/contact" data-target="#contact">Contact Us</a></li>						   
+					  <li ng-hide="initialize_var()[0]"><a data-toggle="pill" class="color6" ng-href="#/aboutUs" data-target="#aboutUs">About</a></li>
+<!-- 					  <li><a  href="#categories">View Requests</a></li>							 -->
+<!-- 					  <li><a class="color6" href="#contact">Contact Us</a></li>					   -->
+		<!-- 			  <li ng-show="initialize_var()"><a  ng-href="#/viewPosts"></a></li>
+					  <li ng-show="initialize_var()"><a  ng-href="#/adFormPage"></a></li>
+		 -->			  
+					  
+			  </ul> 
+			  </div>
+			</div>
+				<div class="col-sm-3 search" style="margin-top:15px; margin-bottom: 5px;">
+					<form class="navbar-form" role="search">
+				       <div class="input-group">
+				       	<ul class="memenu skyblue">
+				            <li ng-show="initialize_button()"><a style="color: white" class="acount-btn" ng-href="#/myBookings">My Bookings</a></li>
+				         </ul>
+				        </div>
+			        </form>
+				</div>
+		
+			
+					  		
+		
+		</div>
+	</div>
+</div>
+
+
+	<div>
+		<div ng-view=""></div>
+	</div>
+
+
+
+<div class="footer_bg">
+<div class="wrap">
+<div class="footer">
+			<div class="copy">
+				<p class="link"><span>All rights reserved</span></p>
+			</div>
+			<div class="f_nav">
+				<ul>
+					<li><a ng-href="#/">Home</a></li>					
+					<li><a ng-href="#/aboutUs">About</a></li>
+					<li><a ng-href="#/contact">Contact</a></li>
+				</ul>
+			</div>
+			<div class="soc_icons">
+				<ul>
+					<li><a class="icon1" href="https://www.facebook.com"></a></li>
+					<li><a class="icon2" href="twitter.com"></a></li>
+					<li><a class="icon3" href="vimeo.com"></a></li>
+					<li><a class="icon4" href="google.com"></a></li>
+					<li><a class="icon5" href="picasa.com"></a></li>
+					<div class="clear"></div>
+				</ul>	
+			</div>
+			<div class="clear"></div>
+</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+	
+	

@@ -1,0 +1,48 @@
+<div class="container" ng-init="getBookingRequests()">
+	<div class="check-out">
+	
+		<h1>User Requests</h1>
+	
+   	     <table >
+		  <tr>
+		    <th>Room Name</th>
+			<th>Subject</th>
+			<th>Category</th>
+			<th>Status</th>	
+			<th>Date & Time</th>
+			<th>Actions</th>	
+		  </tr>
+		  <tr ng-repeat="req in BookingRequestList">
+			<td>
+			<p>{{req.roomname}}</p>
+			</td>
+			
+			<td>
+			<p>{{req.subject}}</p>
+			</td>
+			
+			<td>
+			<p>{{req.category}}</p>
+			</td>
+			
+			<td>
+			<p>{{req.status}}</p>
+			</td>
+			
+			<td>
+			<p>{{req.sd}} to {{req.ed}}<br>{{req.shr}} to {{req.ehr}}</p>
+			</td>
+			
+			
+			
+			<td>
+			<a href="#/viewRequest"  style="cursor : pointer;text-decoration: none;" class=" to-buy" ng-click="allocateRoomByAdmin( req.id,req.startDate, req.endDate,req.requestee, req.subject, req.category,req.status)">Approve</a>
+			<a href="#/viewRequest"  style="cursor : pointer;text-decoration: none;" class=" to-buy" ng-click="cancelBookingByAdmin( req.id,req.startDate, req.endDate, req.subject, req.category,req.status)">Reject</a>
+			</td>
+		  </tr>
+
+	</table>
+	
+	<div class="clearfix"> </div>
+    </div>
+</div>

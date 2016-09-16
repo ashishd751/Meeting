@@ -1,0 +1,60 @@
+<div class="container" ng-controller="ProductController" ng-init="showAllUsers()">
+	
+	<div class="check-out">
+		<h1>User List</h1>
+   	    <table >
+		  <tr>
+			<th>User Name</th>
+			<th>Email</th>	
+			<th>Action</th>	
+		  </tr>
+		  <tr ng-repeat="user in UserList">
+
+			<td>
+			<p>{{user.name}}</p>
+			</td>
+			
+			<td>
+			<p>{{user.email}}</p>
+			</td>
+			
+			<td>
+<!-- 			<a href="#/ViewUsers" class=" to-buy" ng-click="deleteuser(user.id)">Delete User</a> -->
+				<a  style="cursor : pointer;text-decoration: none;" data-toggle="modal" data-target="#myModal123" class=" to-buy" ng-click="getUserId(user.id)">Delete User</a>
+			</td>
+		  </tr>
+
+	</table>
+	
+	<div class="clearfix"> </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal123" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">DELETE</h4>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete ??</p>
+         </div>
+        <div class="modal-footer">
+          <a class=" to-buy" ng-click="deleteuser(delId)"  style="cursor : pointer; text-decoration: none;" data-dismiss="modal">Delete User</a>
+          <button type="button" class="to-buy" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+ </div>
+</div>

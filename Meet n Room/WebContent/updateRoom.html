@@ -1,0 +1,123 @@
+<div class="container" ng-controller="ProductController">
+	<div class="register">
+		<h1>Update Room</h1>
+		  	  <form name="myForm2" novalidate> 
+				 <div class="col-md-6  register-top-grid">
+					
+					<div class="mation">
+						
+                 	
+                 	<span>Room Name</span>
+					<input type="text" name="rname" id="rname" class="userinput" placeholder="Room Name" ng-model="updatename" />
+					<div ng-show="myForm2.$submitted || myForm2.rname.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rname.$error.required">Please Enter Room Name</span><br>
+                 	</div>
+                 	
+                 	<span>Room City</span>
+					<select id="city" ng-model="updatecity">
+						<option>Pune</option>	
+						<option>Mumbai</option>		
+						<option>Bangalore</option>
+						<option>Delhi</option>						 
+					</select>
+                 	
+                 	<span>Room Location</span>
+					<input type="text" class="form-control" id="disabledInput" name="rlocation" id="rlocation" class="userinput" placeholder="Room Location" ng-model="updatelocation" ng-readonly="true"  disabled />
+					<div ng-show="myForm2.$submitted || myForm2.rlocation.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rlocation.$error.required">Please Enter Room Location</span><br>
+                 	</div>
+                 	
+                 	<span>Room Block</span>
+					<input type="text" name="rblock" id="rblock" class="userinput" placeholder="Room Block" ng-model="updateblock" />
+					<div ng-show="myForm2.$submitted || myForm2.rblock.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rblock.$error.required">Please Enter Room Block</span><br>
+                 	</div>
+             
+                 	<span>Room Address</span>
+					<input type="text" class="form-control" id="disabledInput" name="raddress" id="raddress" class="userinput" placeholder="Room Address" ng-model="updateaddress" ng-readonly="true"  disabled />
+					<div ng-show="myForm2.$submitted || myForm2.raddress.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.raddress.$error.required">Please Enter Room Address</span><br>
+                 	</div>
+                 	
+                 	<span>Room Capacity</span>
+					<input type="text" name="rcapacity" id="rcapacity" class="userinput" placeholder="Room Capacity" ng-model="updatecapaciity" />
+					<div ng-show="myForm2.$submitted || myForm2.rcapacity.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rcapacity.$error.required">Please Enter Capacity</span><br>
+					 
+					</div>
+					 <div class="clearfix"> </div>
+					   
+					 </div>
+					 
+					
+					 
+					 </div>
+					 
+					
+					 
+				     <div class=" col-md-6 register-bottom-grid">
+						   
+							<div class="mation">
+							
+								<span>Room Tables</span>
+					<input type="text" name="rtables" id="rtables" class="userinput" placeholder="Room Tables" ng-model="updatetables" />
+					<div ng-show="myForm2.$submitted || myForm2.rtables.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rtables.$error.required">Please Enter Number of Room Tables</span><br>
+                 	</div>
+                 	
+                 	<span>Room Machines</span>
+					<input type="text" name="rmachines" id="rmachines" class="userinput" placeholder="Room Machines" ng-model="updatemachines" />
+					<div ng-show="myForm2.$submitted || myForm2.rmachines.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rmachines.$error.required">Please Enter Room Machines</span><br>
+                 	</div>
+                 	                 	
+                 	<span>Room Board</span>
+					<input type="text" name="rboard" id="rboard" class="userinput" placeholder="Room Boards" ng-model="updateboard"  />
+					<div ng-show="myForm2.$submitted || myForm2.rboard.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rboard.$error.required">Please Enter Number of Room Boards</span><br>
+                 	</div> 
+                 	 
+                 	<span>Room Chart</span>
+					<input type="text" name="rchart" id="rchart" class="userinput" placeholder="Room Chart" ng-model="updatechart" />
+					<div ng-show="myForm2.$submitted || myForm2.rchart.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rchart.$error.required">Please Enter Number of Room Charts</span><br>
+                 	</div>
+                 	
+                 	<span>Room Screen</span>
+					<input type="text" class="form-control" id="disabledInput" name="rscreen" id="rscreen" class="userinput" placeholder="Room Screen" ng-model="updatescreen" ng-readonly="true"  disabled />
+					<div ng-show="myForm2.$submitted || myForm2.rscreen.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rscreen.$error.required">Please Enter Number of Room Screens</span><br>
+                 	</div>
+                 	
+                 	<span>Room Projector</span>
+					<input type="text" class="form-control" id="disabledInput" name="rprojector" id="rprojector" class="userinput" placeholder="Room Projector" ng-model="updateprojector" ng-readonly="true"  disabled />
+					<div ng-show="myForm2.$submitted || myForm2.rprojector.$touched">
+                   		<span style="color:#e78200" ng-show="myForm2.rprojector.$error.required">Please Enter Number of Room Projectors</span><br>
+                 	</div>
+                 	
+                 	<span>Room Internet</span>
+					<select id="category" ng-model="updatenet">
+						<option>True</option>	
+						<option>False</option>															 
+					</select>
+					 </div>
+					 </div>
+					 
+					 
+					 
+					 
+					 <div class="clearfix"> </div>
+				</form>
+				
+				<div class="register-but">
+				   	<form>
+					   <input type="submit" value="Update Room" id="submit" ng-click="updateRoom()">					   
+					   <div class="clearfix"> </div>
+				   </form>
+				</div>
+		
+				
+				
+				
+		   </div>
+</div>

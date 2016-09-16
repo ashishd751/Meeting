@@ -1,0 +1,71 @@
+<div class="main_bg" style="background:white" ng-controller="ProductController">
+<div class="wrap">
+	<div class="main">
+		<div class="res_online" align="center">
+			<h4>Book a Room</h4>
+			
+		</div>			
+			<div class="span_of_2">
+				<div class="span2_of_1">
+					<h4>Start Date:</h4>
+					<div class="book_date btm">
+						<form>
+							<input type="date" name="startDate" class="date" style="width: 250px;" ng-model="startDate">
+					
+							
+						</form>
+						
+						
+					</div>	
+					<h4>Start time:</h4>
+					<div class="book_date btm">
+						<form>
+							<input type="time" class="time" name="startTime"  style="width: 250px;" ng-model="startTime">
+						</form>
+					</div>
+					<div class="sel_room">
+						<h4>Category</h4>
+						<select id="country" class="frm-field required" name="roomType" ng-model="roomType">
+							<option value="null">Select a type of Room</option>
+				            <option value="TRAINING">Training Room</option>         
+				            <option value="OPEN_PROGRAM">Open Program Room</option>
+							<option value="BUSINESS_UNIT_PROGRAM">Business Program Room</option>
+		        		</select>
+					</div>	
+					
+				</div>
+				<div class="span2_of_1">
+					<h4>End Date:</h4>
+					<div class="book_date btm">
+						<form>
+							<input type="date" name="endDate" class="date" style="width: 250px;" ng-model="endDate">
+							
+						</form>
+					</div>	
+					<h4>End time:</h4>
+					<div class="book_date btm">
+						<form>
+							<input type="time" name="endTime" class="time" style="width: 250px;" ng-model="endTime">
+						</form>
+					</div>
+					<div class="sel_room">
+						<h4>Subject</h4>
+						<input type="text" name="subject" ng-model="subject" style="width: 578px; margin: 5px 0; padding: 4px; color: #858585; font-size: 0.8725em; outline: none; background: #ffffff; border: 1px solid #DFDFDF;" required>
+					</div>	
+					<div class="sel_room left">
+						
+					</div>	
+				</div>
+				<div class="clear"></div>
+				<div class="res_btn">
+					<form>
+						<input type="submit" value="Book Room" style="width: 280px;"  ng-click="bookRoom(startDate,startTime,endDate,endTime,subject,roomType)" >
+					</form>
+				</div>		
+			</div>
+			
+					
+				
+	</div>
+</div>
+</div>	

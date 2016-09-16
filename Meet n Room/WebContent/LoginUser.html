@@ -1,0 +1,44 @@
+
+
+
+<div class="account" ng-controller="ProductController">
+	<div class="container">
+		<h1>Login to your account</h1>
+		<div class="account_grid">
+			   <div class="col-md-6 login-right">
+				<form  name="myForm1" novalidate>
+
+					<span>Email Id</span>
+					<input type="email" name="username" id="username" class="userinput" placeholder="User ID" ng-model="username" ng-change="myChange1()" required autofocus />
+					<!-- <div ng-show="myForm1.$submitted || myForm1.username.$touched">
+                   		<span ng-show="myForm1.username.$error.required && myForm1.username.$invalid" style="color:red">Enter valid email Id</span><br>
+                 	</div> -->
+				<span style="color:red;" ng-show="myForm1.username.$touched && myForm1.username.$invalid">Enter valid E-mail ID!</span><br> 
+					<span>Password</span>
+					<input type="password" name="pass" class="userinput" placeholder="Password" id="password" ng-model="password" ng-change="myChange1()" required/>
+					<div ng-show="myForm1.$submitted || myForm1.pass.$touched">
+                     	<span ng-show="myForm1.pass.$error.required" style="color:red">Enter Password</span>
+					</div>
+					<div class="word-in">
+				 		 <input type="submit" value="Login" id="submit" ng-click="login()"> 	
+				 		 <div ng-show="log.msg">
+					    <p style="color:red" >You have entered wrong username/password! Please try again!</p>			   
+					     </div>	
+					     <div ng-show="log.msg2">
+					    <p style="color:red" >Invalid email Id entered! Please try again!</p>			   
+					     </div>		
+					      <div ng-show="log.msg3">
+					    <p style="color:red" >Please enter email Id as well as password! Please try again!</p>			   
+					     </div>			 		 
+				  	</div>
+			    </form>
+			   </div>	
+			    <div class="col-md-6 login-left">
+			  	 <h4>EXISTING USERS</h4>
+				 <p>Being an existing user, you are allowed to access all our facilities and provisions like booking a corporate room for formal occasions such as meetings, conferences. For different occasions, availability of different room can be provided and more.</p>				
+<!-- 				 <a class="acount-btn" href="#/registerPage">Add User</a> -->
+			   </div>
+			   <div class="clearfix"> </div>
+			 </div>
+	</div>
+</div>
